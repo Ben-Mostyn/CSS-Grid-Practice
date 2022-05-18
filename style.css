@@ -1,0 +1,37 @@
+.grid-container {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  border: green solid 2px;
+}
+.grid-item {
+  border: black 1px solid;
+  border-radius: 50%;
+  justify-content: center;
+  align-content: center;
+  background-color: white;
+}
+.blue-container {
+  border: black 2px solid;
+  display: grid;
+  /* grid-template-columns: 2fr 1fr; */
+  grid-template-columns: repeat(7, 100px);
+
+  /* grid-template-rows: 200px 150px; */
+
+  /*Below makes any rows that are added on 150px in height*/
+  /* grid-auto-rows: 150px; */
+
+  /*Below makes the rows with content fit around the content, so the row grows bigger when the content does. 
+    Anything that doesnt have content is set to 150px*/
+  grid-auto-rows: minmax(100px, auto);
+  grid-column-gap: 50px;
+  grid-row-gap: 20px;
+
+  justify-content: center;
+  align-content: center;
+  background-color: blue;
+  width: 60%;
+  height: 100%;
+}
