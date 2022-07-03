@@ -1,28 +1,30 @@
-let elem = document.getElementById("game-chip");
-let elem2 = document.getElementById("game-chip1");
-const colorFunc = (event) => {
+const colorFunc = () => {
+  let colorPick = false;
   document.querySelectorAll("#game-chip").forEach((item) => {
-    item.addEventListener("click", (event) => {
-      let colorPick = false;
-      if (!colorPick) {
-        event.target.style.backgroundColor = "red";
-        event.target.value = colorPick = true;
-      } else {
-        event.target.style.backgroundColor = "yellow";
-        colorPick = false;
-      }
-    });
-    item.addEventListener("contextmenu", (event) => {
-      event.preventDefault();
-      event.target.style.backgroundColor = "yellow";
+    const colorPicker = () => {
+      item.addEventListener("click", (event) => {
+        if (!colorPick) {
+          event.target.style.backgroundColor = "red";
+          colorPick = true;
+          console.log(colorPick);
+        } else {
+          event.target.style.backgroundColor = "yellow";
+          colorPick = false;
+          console.log(colorPick);
+        }
+      });
+    };
+    colorPicker();
+  });
+};
+colorFunc();
+
+const resetThePage = () => {
+  document.getElementById("resetBtn").addEventListener("click", () => {
+    document.querySelectorAll("#game-chip").forEach((item) => {
+      item.style.backgroundColor = "white";
     });
   });
 };
 
-const reset = (e) => {
-  document.querySelectorAll("#game-chip", (e) => {
-    document.addEventListener("click", (e) => {
-      e.target.style.backgroundColor = "white";
-    });
-  });
-};
+resetThePage();

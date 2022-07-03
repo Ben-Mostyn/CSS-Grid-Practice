@@ -3,7 +3,6 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  border: green solid 2px;
 }
 .grid-item {
   border: black 1px solid;
@@ -34,4 +33,6 @@
   background-color: blue;
   width: 60%;
   height: 100%;
+  -webkit-box-shadow: -3px -2px 0px 2px rgb(4, 4, 138);
+  box-shadow: -3px -2px 0px 2px rgb(4, 4, 138);
 }
